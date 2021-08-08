@@ -1,3 +1,5 @@
+package week01;
+
 public class HelloClassLoader extends ClassLoader {
 
     private byte[] oriBytes;
