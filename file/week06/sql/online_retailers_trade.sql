@@ -11,7 +11,7 @@ CREATE TABLE user_info(
   birthday DATETIME COMMENT '会员生日',
   user_level TINYINT NOT NULL DEFAULT 1 COMMENT '会员级别：1 普通会员，2 青铜，3白银，4黄金，5钻石',
   user_money DECIMAL(8,2) NOT NULL DEFAULT 0.00 COMMENT '用户余额',
-	create_time DATETIME COMMENT '创建时间',
+  create_time DATETIME COMMENT '创建时间',
   modified_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
   PRIMARY KEY pk_user_id((user_id)
 ) ENGINE = innodb COMMENT '用户信息表';
@@ -21,7 +21,7 @@ CREATE TABLE user_level_info(
   level_name VARCHAR(10) NOT NULL COMMENT '会员级别名称',
   min_point INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '该级别最低积分',
   max_point INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '该级别最高积分',
-	create_time DATETIME COMMENT '创建时间',
+  create_time DATETIME COMMENT '创建时间',
   modified_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
   PRIMARY KEY pk_user_level(user_level)
 ) ENGINE = innodb COMMENT '用户级别信息表';
@@ -35,7 +35,7 @@ CREATE TABLE user_addr_info(
   district SMALLINT NOT NULL COMMENT '地区表中的区ID',
   address VARCHAR(200) NOT NULL COMMENT '具体的地址门牌号',
   is_default TINYINT NOT NULL COMMENT '是否默认',
-	create_time DATETIME COMMENT '创建时间',
+  create_time DATETIME COMMENT '创建时间',
   modified_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
   PRIMARY KEY pk_user_addr_id(user_addr_id)
 ) ENGINE = innodb COMMENT '用户地址表';
@@ -59,7 +59,7 @@ CREATE TABLE product_info(
   production_date DATETIME NOT NULL COMMENT '生产日期',
   lifecycle INT NOT NULL COMMENT '商品有效期',
   descript TEXT NOT NULL COMMENT '商品描述',
-	create_time DATETIME COMMENT '创建时间',
+  create_time DATETIME COMMENT '创建时间',
   modified_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
   PRIMARY KEY pk_product_id(product_id)
 ) ENGINE = innodb COMMENT '商品信息表';
@@ -99,9 +99,9 @@ CREATE TABLE refund_info(
   refund_type TINYINT NOT NULL COMMENT '退款方式：1现金，2支付宝，3微信，4银行卡',
   refund_money DECIMAL(8,2) NOT NULL COMMENT '订单金额',
   bank_card_no VARCHAR(100) COMMENT '银行卡号',
-	bank_reserve_name VARCHAR(50) COMMENT '银行预留姓名',
-	bank_reserve_mobile VARCHAR(50) COMMENT '银行预留手机号',
-	refund_status TINYINT NOT NULL DEFAULT 0 COMMENT '退款状态 0-退款中，1-退款成功 2-退款失败',
+  bank_reserve_name VARCHAR(50) COMMENT '银行预留姓名',
+  bank_reserve_mobile VARCHAR(50) COMMENT '银行预留手机号',
+  refund_status TINYINT NOT NULL DEFAULT 0 COMMENT '退款状态 0-退款中，1-退款成功 2-退款失败',
   create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '退款时间',
   modified_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
   PRIMARY KEY pk_refund_id(refund_id)
