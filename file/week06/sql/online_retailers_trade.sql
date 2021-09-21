@@ -13,7 +13,7 @@ CREATE TABLE user_info(
   user_money DECIMAL(8,2) NOT NULL DEFAULT 0.00 COMMENT '用户余额',
   create_time DATETIME COMMENT '创建时间',
   modified_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
-  PRIMARY KEY pk_user_id((user_id)
+  PRIMARY KEY pk_user_id(user_id)
 ) ENGINE = innodb COMMENT '用户信息表';
 用户级别表(user_level_info)
 CREATE TABLE user_level_info(
